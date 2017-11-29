@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package sortassignment;
-
 import java.util.ArrayList;
 
 /**
