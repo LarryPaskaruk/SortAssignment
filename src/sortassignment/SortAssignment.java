@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package sortassignment;
+
 import java.util.ArrayList;
 
 /**
@@ -11,6 +12,8 @@ import java.util.ArrayList;
  * @author 068787845
  */
 public class SortAssignment {
+    
+
 
     /**
      * @param args the command line arguments
@@ -41,4 +44,18 @@ public class SortAssignment {
         }
         return list;
     }
+    public String[] bubbleSort(String[] list){
+        //loop goes through array
+        for(int i=0;i<list.length-i;i++){
+            //store array[i] in temporary variable temp
+        String temp = list[i];
+            //compare temp to array[i+1]
+            if(list[i+1].compareTo(temp)>1){
+                //swap the two values
+                list[i]= list[i+1];
+                list[i+1]=temp;
+            }
+        }
+        return list;
+}
 }
