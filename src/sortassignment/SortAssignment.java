@@ -47,11 +47,11 @@ public class SortAssignment {
         String temp;
         //loop goes through array
         for(int j =0; j<=list.length;j++){
-        for(int i=0;i<list.length-i;i++){
+        for(int i=0;i<list.length-j-1;i++){
             //store array[i] in temporary variable temp
         temp = list[i];
             //compare temp to array[i+1]
-            if(temp.compareTo(list[i+1])>=1){
+            if(temp.compareTo(list[i+1])>0){
                 //swap the two values
                 list[i]= list[i+1];
                 list[i+1]=temp;
