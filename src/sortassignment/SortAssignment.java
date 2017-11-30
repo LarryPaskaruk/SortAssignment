@@ -5,25 +5,24 @@
  */
 package sortassignment;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author 068787845
  */
 public class SortAssignment {
-    
-
-
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         String[] list={"4","6","3","7","1","2","5","9","8"};
         
-        String[] sorted= insertionSort(list);
-        for(int i=0;i<sorted.length;i++){
-            System.out.println(sorted[i]);
+//        String[] sorted= insertionSort(list);
+//        for(int i=0;i<sorted.length;i++){
+//            System.out.println(sorted[i]);
+//        }
+        String[] sortedB= bubbleSort(list);
+        for(int i=0;i<sortedB.length;i++){
+            System.out.println(sortedB[i]);
         }
     }
     public static String[] insertionSort(String[] list){
@@ -44,17 +43,20 @@ public class SortAssignment {
         }
         return list;
     }
-    public String[] bubbleSort(String[] list){
+    public static String[] bubbleSort(String[] list){
+        String temp;
         //loop goes through array
+        for(int j =0; j<=list.length;j++){
         for(int i=0;i<list.length-i;i++){
             //store array[i] in temporary variable temp
-        String temp = list[i];
+        temp = list[i];
             //compare temp to array[i+1]
-            if(list[i+1].compareTo(temp)>1){
+            if(temp.compareTo(list[i+1])>=1){
                 //swap the two values
                 list[i]= list[i+1];
                 list[i+1]=temp;
             }
+        }
         }
         return list;
 }
