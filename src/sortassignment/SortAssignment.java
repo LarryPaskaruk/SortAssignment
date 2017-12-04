@@ -20,10 +20,16 @@ public class SortAssignment {
 //        for(int i=0;i<sorted.length;i++){
 //            System.out.println(sorted[i]);
 //        }
-        String[] sortedB= bubbleSort(list);
-        for(int i=0;i<sortedB.length;i++){
-            System.out.println(sortedB[i]);
-        }
+
+//        String[] sortedB= bubbleSort(list);
+//        for(int i=0;i<sortedB.length;i++){
+//            System.out.println(sortedB[i]);
+//        }
+
+//        String[] sortedC= (String[]) selectionSort(list);
+//        for(int i=0;i<sortedC.length;i++){
+//            System.out.println(sortedC[i]);
+//        }
     }
     public static String[] insertionSort(String[] list){
         //create a loop that loops from the second item to the last
@@ -60,4 +66,34 @@ public class SortAssignment {
         }
         return list;
 }
+    
+    public static Comparable[] selectionSort(Comparable[] array) {
+        //remembers how many indexs have already been sorted
+        int indexSorted = 0;
+        //loops once for every array member, although value itself is unused
+        for (Comparable member : array) {
+            //remembers the index of the next ,owest member, by default the next index
+            int low = indexSorted;
+            
+            //loops over every array member and comares with current lowest value
+            for(int j = indexSorted; j < array.length; j++) {
+                //if a lower value than low is found, set low to index of lower value
+                if (array[j].compareTo(array[low]) < 0) {
+                    low = j;
+                }
+            }
+            
+            //if an index other than the next one is the lowest, swap the values of the two indexs
+            if (low != indexSorted) {
+                Comparable toShift = array[indexSorted];
+                array[indexSorted] = array[low];
+                array[low] = toShift;
+            }
+            
+            //adds one index to the amount of sorted index
+            indexSorted++;
+        }
+        
+        return array;
+    }
 }
